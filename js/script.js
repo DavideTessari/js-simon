@@ -8,14 +8,18 @@
 // * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 
 
-// Funzione per generare numeri casuali
+// Funzione per generare numeri casuali senza ripetizioni
 function generateRandomNumbers() {
     const numbers = [];
-    for (let i = 0; i < 5; i++) {
-      numbers.push(Math.floor(Math.random() * 10));
+    while (numbers.length < 5) {
+      const randomNumber = Math.floor(Math.random() * 100);
+      if (!numbers.includes(randomNumber)) {
+        numbers.push(randomNumber);
+      }
     }
     return numbers;
   }
+  
   
   // Funzione per visualizzare i numeri e avviare il timer
   function showNumbersAndStartTimer() {
