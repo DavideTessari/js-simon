@@ -12,52 +12,45 @@
 function generateRandomNumbers() {
     const numbers = [];
     while (numbers.length < 5) {
-      const randomNumber = Math.floor(Math.random() * 100);
-      if (!numbers.includes(randomNumber)) {
-        numbers.push(randomNumber);
-      }
+        const randomNumber = Math.floor(Math.random() * 100);
+        if (!numbers.includes(randomNumber)) {
+            numbers.push(randomNumber);
+        }
     }
     return numbers;
-  }
-  
-  
-  // Funzione per visualizzare i numeri e avviare il timer
-  function showNumbersAndStartTimer() {
+}
+
+// Funzione per visualizzare i numeri e avviare il timer
+function showNumbersAndStartTimer() {
     const numbers = generateRandomNumbers();
     const numbersContainer = document.getElementById('numbers');
     numbersContainer.innerHTML = numbers.join(' ');
-  
+
     setTimeout(function() {
-      numbersContainer.innerHTML = '';
-      checkNumbers(numbers);
+        numbersContainer.innerHTML = '';
+        checkNumbers(numbers);
     }, 30000);
-  }
-  
-  // Funzione per controllare i numeri inseriti dall'utente
-  function checkNumbers(correctNumbers) {
+}
+
+// Funzione per controllare i numeri inseriti dall'utente
+function checkNumbers(correctNumbers) {
     const userNumbers = [];
     for (let i = 0; i < 5; i++) {
-      const number = parseInt(prompt('Inserisci un numero che hai visto:'));
-      userNumbers.push(number);
+        const number = parseInt(prompt('Inserisci un numero che hai visto:'));
+        userNumbers.push(number);
     }
-  
+
     let correctCount = 0;
     const correctIndices = [];
     for (let i = 0; i < 5; i++) {
-      if (correctNumbers.includes(userNumbers[i])) {
-        correctCount++;
-        correctIndices.push(userNumbers[i]);
-      }
+        if (correctNumbers.includes(userNumbers[i])) {
+            correctCount++;
+            correctIndices.push(userNumbers[i]);
+        }
     }
-  
+
     alert('Hai indovinato ' + correctCount + ' numero/i: ' + (correctIndices.length > 0 ? correctIndices.join(', ') : 'nessuno'));
-  }
-  
-  // Avvio del gioco
-  showNumbersAndStartTimer();
-  
-  
-  
-  
-  
-  
+}
+
+// Avvio del gioco
+showNumbersAndStartTimer();
