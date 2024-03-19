@@ -12,7 +12,7 @@
 function generateRandomNumbers() {
     const numbers = [];
     for (let i = 0; i < 5; i++) {
-      numbers.push(Math.floor(Math.random() * 10)); // Genera numeri casuali da 0 a 9
+      numbers.push(Math.floor(Math.random() * 10));
     }
     return numbers;
   }
