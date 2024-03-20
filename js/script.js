@@ -27,9 +27,12 @@ function showNumbersAndStartTimer() {
     numbersContainer.innerHTML = numbers.join(' ');
 
     setTimeout(function() {
-        numbersContainer.innerHTML = '';
         checkNumbers(numbers);
     }, 30000);
+
+    setTimeout(function() {
+        numbersContainer.innerHTML = '';
+    }, 29000);
 }
 
 // Funzione per controllare i numeri inseriti dall'utente
